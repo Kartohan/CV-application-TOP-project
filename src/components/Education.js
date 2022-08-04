@@ -4,6 +4,11 @@ import EducationEditBox from "./EducationEditBox";
 
 export default class Education extends Component {
   render() {
+    const button = this.props.preview ? null : (
+      <button className="add" onClick={this.props.addNewEdu}>
+        Add School
+      </button>
+    );
     const eduList = this.props.education.map((item) => {
       if (item.edit) {
         return (
@@ -20,15 +25,16 @@ export default class Education extends Component {
             key={item.id}
             info={item}
             editEdu={this.props.editEdu}
+            preview={this.props.preview}
           />
         );
       }
     });
     return (
-      <div>
+      <div className="education-info">
         <h1>Education</h1>
         {eduList}
-        <button onClick={this.props.addNewEdu}>Add School</button>
+        {button}
       </div>
     );
   }

@@ -5,11 +5,14 @@ export default class EducationBox extends Component {
     const position = {
       position: "relative",
     };
+    const button = this.props.preview ? null : (
+      <button onClick={this.props.editEdu}>Edit</button>
+    );
     return (
-      <div style={position} id={this.props.info.id}>
-        <p>{this.props.info.school}</p>
+      <div className="education-box" style={position} id={this.props.info.id}>
+        <p>{`School: ${this.props.info.school}`}</p>
         <p>{`From:${this.props.info.from} - To:${this.props.info.to}`}</p>
-        <button onClick={this.props.editEdu}>Edit</button>
+        <div className="|">{button}</div>
       </div>
     );
   }

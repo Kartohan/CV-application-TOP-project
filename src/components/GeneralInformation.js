@@ -11,11 +11,12 @@ export default class GeneralInformation extends Component {
           id={item.name}
           onEdit={this.props.onEdit}
           text={item.text}
+          preview={this.props.preview}
         />
       );
     });
     return (
-      <div>
+      <div className="general-info">
         <h1>General Information</h1>
         {infoList}
       </div>
