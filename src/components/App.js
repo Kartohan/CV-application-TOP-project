@@ -56,7 +56,18 @@ export default class App extends Component {
       general: newGeneral,
     });
   }
-  onEditEducation = () => {};
+  editEdu = (e) => {
+    let newEdu = this.state.education;
+    let index = newEdu.findIndex(
+      (item) => item.id === e.target.offsetParent.id
+    );
+    let item = newEdu.find((item) => item.id === e.target.offsetParent.id);
+    item.edit = !item.edit;
+    newEdu.splice(index, 1, item);
+    this.setState({
+      education: newEdu,
+    });
+  };
 
   addNewEdu = () => {
     let template = {
@@ -107,6 +118,7 @@ export default class App extends Component {
           deleteEdu={this.deleteEdu}
           addNewEdu={this.addNewEdu}
           submitEdu={this.submitEdu}
+          editEdu={this.editEdu}
           education={this.state.education}
         />
         {/* <PracticalExp /> */}

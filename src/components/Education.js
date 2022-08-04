@@ -15,7 +15,13 @@ export default class Education extends Component {
           />
         );
       } else {
-        return <EducationBox key={item.id} info={item} />;
+        return (
+          <EducationBox
+            key={item.id}
+            info={item}
+            editEdu={this.props.editEdu}
+          />
+        );
       }
     });
     return (
