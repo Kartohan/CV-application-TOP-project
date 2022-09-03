@@ -1,27 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class InfoLine extends Component {
-  render() {
-    const position = {
-      position: "relative",
-    };
-    const button = this.props.preview ? null : (
-      <button onClick={this.props.onEdit}>Edit</button>
+export default function InfoLine(props) {
+  const position = {
+    position: "relative",
+  };
+  const button = props.preview ? null : (
+    <button onClick={props.onEdit}>Edit</button>
+  );
+  if (props.edit) {
+    return (
+      <div style={position} id={props.id}>
+        <input type="text" defaultValue={props.text} />
+        {button}
+      </div>
     );
-    if (this.props.edit) {
-      return (
-        <div style={position} id={this.props.id}>
-          <input type="text" defaultValue={this.props.text} />
-          {button}
-        </div>
-      );
-    } else {
-      return (
-        <div style={position} id={this.props.id}>
-          <p>{this.props.text}</p>
-          {button}
-        </div>
-      );
-    }
+  } else {
+    return (
+      <div style={position} id={props.id}>
+        <p>{props.text}</p>
+        {button}
+      </div>
+    );
   }
 }

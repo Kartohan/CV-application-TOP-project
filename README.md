@@ -8,4 +8,6 @@ What I have learned: <br>
 - React and its components. Classes, events, state and props. Ways to declare methods.<br>
 - And of course NPM, a little bit Git, CSS and JSX.<br>
 
+  03.09.2022 - Due to the TOP assigment change all class components into functional components. Learn how to use some hooks (useEffect, useState)<br>
+
 Link - https://kartohan.github.io/CV-application-TOP-project/
